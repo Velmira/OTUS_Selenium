@@ -44,26 +44,39 @@ class MainPage(BasePage):
         button = self.get_elements(self.ADD_TO_CART_BUTTON)
         return button
 
+    @allure.step("Случайный товар добавлен в корзину")
     def dropdown_cart_button(self):
         button = self.get_element(self.DROPDOWN_CART_BUTTON)
+        text = button.text
+        assert text.startswith("1 item(s)")
+        self.logger.info("Random item is added")
         return button
 
+    @allure.step("Выбор случайного продукта")
     def click_random_element(self, el):
-        self.add_to_cart_buttons()
+        self.logger.info("Random product is chosen")
+        el = self.add_to_cart_buttons()
         random_element = el[random.randint(0, 1)]
         self.execute_script("arguments[0].click();", random_element)
         return random_element
 
     def switch_currency_button(self):
+        self.logger.info("Clicked SWITCH CURRENCY BUTTON")
         self.click(self.SWITCH_CURRENCY_BUTTON)
 
+    @allure.step("Выбор валюты Евро")
     def euro_click(self):
+        self.logger.info("Clicked EURO button")
         self.click(self.EURO_SIGN)
 
+    @allure.step("Выбор валюты Доллар")
     def dollar_click(self):
+        self.logger.info("Clicked DOLLAR button")
         self.click(self.DOLLAR_SIGN)
 
+    @allure.step("Выбор валюты Фунты стерлингов")
     def pound_sterling_click(self):
+        self.logger.info("Clicked POUND STERLING button")
         self.click(self.POUND_STERLING_SIGN)
 
     def prices_new(self):
@@ -79,7 +92,10 @@ class MainPage(BasePage):
         return prices_tax
 
     def my_account_button(self):
+        self.logger.info("Clicked MY ACCOUNT button")
         self.click(self.MY_ACCOUNT_BUTTON)
 
     def register_button(self):
+        self.logger.info("Clicked Register button")
         self.click(self.REGISTER_BUTTON)
+
