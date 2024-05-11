@@ -3,7 +3,7 @@ from OTUS_Selenium.PageObject.page_objects.base_page import BasePage
 
 
 class ItemPage(BasePage):
-    TITLE = "MacBook"
+    TITLE = "Sony VAIO"
     SEARCH_COL = By.ID, "search"
     HEADER_CART = By.ID, "header-cart"
     PRICE_NEW = By.CSS_SELECTOR, ".price-new"

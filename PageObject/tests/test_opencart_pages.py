@@ -16,6 +16,8 @@ from OTUS_Selenium.PageObject.page_objects.admin_page_products import AdminPageP
 from OTUS_Selenium.PageObject.page_objects.register_page import RegisterPage
 
 
+
+
 def test_main_page(browser):
     browser.get(browser.base_url)
     MainPage(browser).main_title()
@@ -37,7 +39,7 @@ def test_catalog(browser):
 
 
 def test_product(browser):
-    browser.get(browser.base_url + "product/laptop-notebook/macbook")
+    browser.get(browser.base_url + "product/laptop-notebook/sony-vaio")
     ItemPage(browser).main_title()
     ItemPage(browser).search_col()
     ItemPage(browser).header_cart()
