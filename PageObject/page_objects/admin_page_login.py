@@ -12,9 +12,7 @@ class AdminPage(BasePage):
     INPUT_PASSWORD = By.XPATH, "//*[@id=\"input-password\"]"
     LOGIN_BUTTON = By.XPATH, "//*[@id=\"form-login\"]/div[3]/button"
     LOGOUT_BUTTON = By.XPATH, "//*[@id=\"nav-logout\"]/a/span"
-    CATALOG_BUTTON = By.XPATH, "//*[ @ id =\"menu-catalog\"]/a"
-    PRODUCTS_BUTTON = By.XPATH, "//*[@id=\"collapse-1\"]/li[2]/a"
-    ADD_BUTTON = By.XPATH, "//*[@id=\"content\"]/div[1]/div/div/a"
+
     FOOTER = By.ID, "footer"
 
     USER = "user"
@@ -35,26 +33,26 @@ class AdminPage(BasePage):
     def username_field(self):
         self.get_element(self.INPUT_USERNAME)
 
-    @allure.step("Ввели логин")
+    @allure.step("Р’РІРµР»Рё Р»РѕРіРёРЅ")
     def input_username(self):
         self.input_value(self.INPUT_USERNAME, self.USER)
 
     def password_field(self):
         self.get_element(self.INPUT_PASSWORD)
 
-    @allure.step("Ввели пароль")
+    @allure.step("Р’РІРµР»Рё РїР°СЂРѕР»СЊ")
     def input_password(self):
         self.input_value(self.INPUT_PASSWORD, self.PASSWORD)
 
     def login_button(self):
         self.get_element(self.LOGIN_BUTTON)
 
-    @allure.step("Вход в систему")
+    @allure.step("Р’С…РѕРґ РІ СЃРёСЃС‚РµРјСѓ")
     def click_login_button(self):
         self.click(self.LOGIN_BUTTON)
         self.logger.info("Logged in")
 
-    @allure.step("Выход из системы")
+    @allure.step("Р’С‹С…РѕРґ РёР· СЃРёСЃС‚РµРјС‹")
     def click_logout_button(self):
         self.click(self.LOGOUT_BUTTON)
         self.logger.info("Logged out")
@@ -62,17 +60,4 @@ class AdminPage(BasePage):
     def footer(self):
         self.get_element(self.FOOTER)
 
-    @allure.step("Переход в каталог")
-    def catalog_button(self):
-        self.logger.info("Clicked CATALOG Button")
-        self.click(self.CATALOG_BUTTON)
 
-    @allure.step("Переход в Продукты")
-    def products_button(self):
-        self.logger.info("Clicked PRODUCTS Button")
-        self.click(self.PRODUCTS_BUTTON)
-
-    @allure.step("Клик по кнопке добавления продукта")
-    def add_button(self):
-        self.click(self.ADD_BUTTON)
-        self.logger.info("Clicked ADD NEW Button")

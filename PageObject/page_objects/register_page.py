@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from OTUS_Selenium.PageObject.page_objects.base_page import BasePage
 
 
-
 class RegisterPage(BasePage):
     TITLE = "Register Account"
     TITLE_ACCOUNT_CREATED = "Your Account Has Been Created!"
@@ -49,22 +48,22 @@ class RegisterPage(BasePage):
     def continue_button(self):
         self.get_element(self.CONTINUE_BUTTON)
 
-    @allure.step("���� �����")
+    @allure.step("Ввод имени")
     def input_value_first_name(self):
         self.logger.info("Entered first name: %s" % str(RegisterPage.FIRST_NAME))
         self.input_value(self.INPUT_FIRST_NAME, text=RegisterPage.FIRST_NAME)
 
-    @allure.step("���� �������")
+    @allure.step("Ввод фамилии")
     def input_value_last_name(self):
         self.logger.info("Entered last name: %s" % str(RegisterPage.LAST_NAME))
         self.input_value(self.INPUT_LAST_NAME, text=RegisterPage.LAST_NAME)
 
-    @allure.step("���� email")
+    @allure.step("Ввод email")
     def input_value_email(self):
         self.logger.info("Entered email: %s" % str(RegisterPage.EMAIL))
         self.input_value(self.INPUT_EMAIL, text=RegisterPage.EMAIL)
 
-    @allure.step("���� ������")
+    @allure.step("Ввод пароля")
     def input_value_password(self):
         self.logger.info("Entered password")
         self.input_value(self.INPUT_PASSWORD, text=RegisterPage.PASSWORD)
@@ -72,3 +71,13 @@ class RegisterPage(BasePage):
     def press_continue(self):
         self.logger.info("Clicked continue button")
         self.click(self.CONTINUE_BUTTON)
+
+    @allure.step("Согласие с политикой безопасности")
+    def privacy_policy(self):
+        self.logger.info("Privacy policy agreed")
+        self.click(self.PRIVACY_POLICY)
+
+    @allure.step("Переход в профиль")
+    def continue_to_my_account(self):
+        self.logger.info("Clicked continue to my account button")
+        self.click(self.CONTINUE_TO_MY_ACCOUNT_BUTTON)

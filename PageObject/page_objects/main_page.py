@@ -1,3 +1,4 @@
+import allure
 import random
 from selenium.webdriver.common.by import By
 from OTUS_Selenium.PageObject.page_objects.base_page import BasePage
@@ -44,7 +45,7 @@ class MainPage(BasePage):
         button = self.get_elements(self.ADD_TO_CART_BUTTON)
         return button
 
-    @allure.step("Случайный товар добавлен в корзину")
+    @allure.step("РЎР»СѓС‡Р°Р№РЅС‹Р№ С‚РѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ РІ РєРѕСЂР·РёРЅСѓ")
     def dropdown_cart_button(self):
         button = self.get_element(self.DROPDOWN_CART_BUTTON)
         text = button.text
@@ -52,7 +53,7 @@ class MainPage(BasePage):
         self.logger.info("Random item is added")
         return button
 
-    @allure.step("Выбор случайного продукта")
+    @allure.step("Р’С‹Р±РѕСЂ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ РїСЂРѕРґСѓРєС‚Р°")
     def click_random_element(self, el):
         self.logger.info("Random product is chosen")
         el = self.add_to_cart_buttons()
@@ -64,17 +65,17 @@ class MainPage(BasePage):
         self.logger.info("Clicked SWITCH CURRENCY BUTTON")
         self.click(self.SWITCH_CURRENCY_BUTTON)
 
-    @allure.step("Выбор валюты Евро")
+    @allure.step("Р’С‹Р±РѕСЂ РІР°Р»СЋС‚С‹ Р•РІСЂРѕ")
     def euro_click(self):
         self.logger.info("Clicked EURO button")
         self.click(self.EURO_SIGN)
 
-    @allure.step("Выбор валюты Доллар")
+    @allure.step("Р’С‹Р±РѕСЂ РІР°Р»СЋС‚С‹ Р”РѕР»Р»Р°СЂ")
     def dollar_click(self):
         self.logger.info("Clicked DOLLAR button")
         self.click(self.DOLLAR_SIGN)
 
-    @allure.step("Выбор валюты Фунты стерлингов")
+    @allure.step("Р’С‹Р±РѕСЂ РІР°Р»СЋС‚С‹ Р¤СѓРЅС‚С‹ СЃС‚РµСЂР»РёРЅРіРѕРІ")
     def pound_sterling_click(self):
         self.logger.info("Clicked POUND STERLING button")
         self.click(self.POUND_STERLING_SIGN)
