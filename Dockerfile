@@ -14,7 +14,7 @@ RUN pip install -U pip
 RUN pip install -r requirements.txt
 
 # Копируем остальные файлы проекта
-COPY .. .
+COPY . .
 
 # Устанавливаем команду по умолчанию для запуска тестов
 CMD ["pytest", "--browser", "chrome"]
