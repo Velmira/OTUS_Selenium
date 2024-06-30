@@ -8,12 +8,12 @@ sys.path.append(os.getcwd())
 
 from selenium.common import TimeoutException
 from selenium.webdriver.common.alert import Alert
-from OTUS_Selenium.PageObject.page_objects.main_page import MainPage
-from OTUS_Selenium.PageObject.page_objects.catalog_page import CatalogPage
-from OTUS_Selenium.PageObject.page_objects.item_page import ItemPage
-from OTUS_Selenium.PageObject.page_objects.admin_page_login import AdminPage
-from OTUS_Selenium.PageObject.page_objects.admin_page_products import AdminPageProducts
-from OTUS_Selenium.PageObject.page_objects.register_page import RegisterPage
+from OTUS_Selenium.page_objects.main_page import MainPage
+from OTUS_Selenium.page_objects.catalog_page import CatalogPage
+from OTUS_Selenium.page_objects.item_page import ItemPage
+from OTUS_Selenium.page_objects.admin_page_login import AdminPage
+from OTUS_Selenium.page_objects.admin_page_products import AdminPageProducts
+from OTUS_Selenium.page_objects.register_page import RegisterPage
 
 
 
