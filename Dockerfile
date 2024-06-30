@@ -17,5 +17,5 @@ RUN pip install -r requirements.txt
 COPY .. .
 
 # Устанавливаем команду по умолчанию для запуска тестов
-CMD ["pytest --browser ${browser} --alluredir=/app/allure-results"]
+CMD ["pytest", "--browser", "chrome"]
 
